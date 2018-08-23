@@ -34,9 +34,33 @@ max([100, 10, -1000])
 # defining the function with two arguments
 def makeModel(make,model)
     # the zip function creates and array of arrays
-    combine make.zip(model)
+    combine = make.zip(model)
         puts combine
 end
 
 makeModel([:toyota, :tesla], ["prius", "model s"])
-    
+
+# Problem 4
+# Write a program that prints the numbers from 1 to 100, except:
+# for multiples of three print "Fizz" instead of the number
+# for multiples of five print "Buzz"
+# Print "FizzBuzz" for numbers that are multiples of both 3 and 5.
+def multiples(num)
+# "each" loop for each integer
+    (1..num).each do |num|
+        # numbers that are mulitples of 3 and 5
+        if num % 3 == 0 && num % 5 == 0
+            puts "FizzBuzz"
+        # multiples of 5
+        elsif num % 5 == 0
+            puts "Buzz"
+        # multiples of 3
+        elsif num % 3 == 0
+            puts "Fizz"
+        # if not divisible by 5 or 3, just print number
+        else
+            puts num
+        end
+    end
+end
+multiples(100)
